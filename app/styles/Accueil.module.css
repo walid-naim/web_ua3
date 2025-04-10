@@ -1,0 +1,120 @@
+.hero {
+    position: relative;
+    height: 80vh;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-image: url('/images/hero-rock.jpg');
+    background-size: cover;
+    background-position: center;
+    color: var(--couleur-texte-primaire);
+    border-bottom: 5px solid var(--couleur-accent);
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--couleur-overlay);
+}
+
+.heroContenu {
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+    max-width: 800px;
+}
+
+.heroContenu h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    position: relative;
+    display: inline-block;
+}
+
+.heroContenu h1::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background-color: var(--couleur-accent);
+    margin: 0.5rem auto 0;
+}
+
+.heroContenu p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.artistesSection {
+    text-align: center;
+    padding: 4rem 0;
+    background-color: rgba(35, 31, 30, 0.7);
+    position: relative;
+}
+
+.artistesSection::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background-image: url('/images/border-wood.png');
+    background-repeat: repeat-x;
+}
+
+.artistesSection h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    font-weight: 700;
+    color: var(--couleur-accent);
+    position: relative;
+    display: inline-block;
+}
+
+.artistesSection h2::before,
+.artistesSection h2::after {
+    content: '♪';
+    color: var(--couleur-accent-secondaire);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+}
+
+.artistesSection h2::before {
+    left: -40px;
+}
+
+.artistesSection h2::after {
+    right: -40px;
+}
+
+.voirPlus {
+    margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
+    .heroContenu h1 {
+        font-size: 2.5rem;
+    }
+
+    .heroContenu p {
+        font-size: 1.25rem;
+    }
+
+    .artistesSection h2::before,
+    .artistesSection h2::after {
+        display: none;
+    }
+}

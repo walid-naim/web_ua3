@@ -1,0 +1,108 @@
+.carte {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: var(--rayon-bordure);
+    overflow: hidden;
+    transition: transform var(--transition-moyenne);
+    height: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    border: 1px solid rgba(125, 93, 79, 0.2);
+}
+
+.carte:hover {
+    transform: translateY(-8px);
+}
+
+.image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    transition: transform var(--transition-moyenne);
+}
+
+.carte:hover .image {
+    transform: scale(1.05);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+.etiquette {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: var(--couleur-accent);
+    padding: 8px 15px;
+    border-radius: 50px;
+    z-index: 2;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.date {
+    color: white;
+    font-size: var(--taille-texte-sm);
+    font-weight: 700;
+}
+
+.contenu {
+    padding: var(--espace-md);
+    position: relative;
+}
+
+.titre {
+    font-size: var(--taille-texte-lg);
+    margin-bottom: var(--espace-xs);
+    font-family: 'Playfair Display', Georgia, serif;
+    color: var(--couleur-texte-primaire);
+}
+
+.lieu {
+    color: var(--couleur-accent);
+    font-size: var(--taille-texte-sm);
+    margin-bottom: var(--espace-sm);
+    font-style: italic;
+}
+
+.artistes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: var(--espace-md);
+}
+
+.artiste {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: var(--taille-texte-xs);
+    color: var(--couleur-texte-secondaire);
+}
+
+.voirPlus {
+    display: inline-block;
+    position: relative;
+    font-size: var(--taille-texte-sm);
+    color: var(--couleur-texte-primaire);
+    padding-bottom: 4px;
+    font-weight: 700;
+}
+
+.icone {
+    margin-left: 5px;
+    color: var(--couleur-accent);
+    transition: transform var(--transition-rapide);
+    display: inline-block;
+}
+
+.carte:hover .icone {
+    transform: translateX(5px);
+}
+

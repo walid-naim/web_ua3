@@ -1,0 +1,218 @@
+.piedDePage {
+    background-color: var(--couleur-fond-alt);
+    padding: var(--espace-lg) 0 var(--espace-md);
+    position: relative;
+    border-top: 3px solid var(--couleur-accent);
+}
+
+.piedDePage::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background-repeat: repeat-x;
+    transform: translateY(-10px);
+}
+
+.contenu {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--espace-md);
+}
+
+.marque {
+    max-width: 300px;
+}
+
+.logo {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: var(--taille-texte-xl);
+    margin-bottom: var(--espace-sm);
+    font-weight: 700;
+    color: var(--couleur-accent);
+}
+
+.marque p {
+    color: var(--couleur-texte-secondaire);
+    font-style: italic;
+}
+
+.blocLiens {
+    display: flex;
+    gap: var(--espace-xl);
+}
+
+.colonneLiens h3 {
+    position: relative;
+    font-size: var(--taille-texte-base);
+    margin-bottom: var(--espace-md);
+    display: inline-block;
+}
+
+.colonneLiens h3::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--couleur-accent);
+}
+
+.liens {
+    list-style: none;
+}
+
+.liens li {
+    margin-bottom: var(--espace-sm);
+}
+
+.liens a {
+    color: var(--couleur-texte-secondaire);
+    transition: color var(--transition-rapide);
+    position: relative;
+    padding-left: 16px;
+}
+
+.liens a::before {
+    content: '♪';
+    position: absolute;
+    left: 0;
+    color: var(--couleur-accent);
+    font-size: 12px;
+}
+
+.liens a:hover {
+    color: var(--couleur-texte-primaire);
+}
+
+.participants {
+    margin: var(--espace-lg) 0;
+}
+
+.participants h3 {
+    position: relative;
+    text-align: center;
+    font-size: var(--taille-texte-lg);
+    margin-bottom: var(--espace-md);
+    font-family: 'Playfair Display', Georgia, serif;
+    color: var(--couleur-accent);
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.participants h3::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    bottom: -5px;
+    left: 25%;
+    background-color: var(--couleur-accent);
+}
+
+.listeParticipants {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--espace-md);
+}
+
+.participantBadge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: var(--espace-sm);
+    border-radius: var(--rayon-bordure);
+    width: 160px;
+    transition: transform var(--transition-rapide);
+    text-align: center;
+}
+
+.participantBadge:hover {
+    transform: translateY(-5px);
+}
+
+.vinyle {
+    width: 60px;
+    height: 60px;
+    background-color: #121212;
+    border-radius: 50%;
+    margin-bottom: var(--espace-sm);
+    position: relative;
+    overflow: hidden;
+}
+
+.vinyleInner {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: var(--couleur-accent);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.vinyle::before {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.separateur {
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    margin-bottom: var(--espace-md);
+}
+
+.copyright {
+    text-align: center;
+    color: var(--couleur-texte-secondaire);
+    font-size: var(--taille-texte-sm);
+}
+
+@media (max-width: 768px) {
+    .contenu {
+        flex-direction: column;
+        gap: var(--espace-lg);
+        text-align: center;
+    }
+
+    .marque {
+        margin: 0 auto;
+    }
+
+    .colonneLiens h3 {
+        margin: 0 auto var(--espace-md);
+    }
+
+    .colonneLiens h3::after {
+        left: 25%;
+        width: 50%;
+    }
+
+    .blocLiens {
+        flex-direction: column;
+        gap: var(--espace-md);
+    }
+
+    .listeParticipants {
+        gap: var(--espace-sm);
+    }
+
+    .participantBadge {
+        width: 140px;
+    }
+}

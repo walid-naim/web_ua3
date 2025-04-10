@@ -1,0 +1,142 @@
+.carte {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: var(--rayon-bordure);
+    overflow: hidden;
+    height: 100%;
+    transition: transform var(--transition-moyenne);
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(125, 93, 79, 0.2);
+}
+
+.carte:hover {
+    transform: translateY(-8px);
+}
+
+.carte::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background-color: var(--couleur-accent);
+}
+
+.vinyle {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.pochette {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform var(--transition-moyenne);
+}
+
+.carte:hover .pochette {
+    transform: scale(1.05);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+.disque {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-color: #121212;
+    border-radius: 50%;
+    bottom: -30px;
+    right: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    transition: transform var(--transition-moyenne);
+}
+
+.disque::before {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.disque::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: var(--couleur-accent);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.carte:hover .disque {
+    transform: rotate(30deg);
+}
+
+.contenu {
+    padding: var(--espace-md);
+    position: relative;
+}
+
+.nom {
+    font-size: var(--taille-texte-xl);
+    margin-bottom: var(--espace-xs);
+    color: var(--couleur-texte-primaire);
+    font-family: 'Playfair Display', Georgia, serif;
+}
+
+.genre {
+    color: var(--couleur-accent);
+    font-size: var(--taille-texte-base);
+    margin-bottom: var(--espace-sm);
+    font-style: italic;
+}
+
+.bio {
+    color: var(--couleur-texte-secondaire);
+    margin-bottom: var(--espace-md);
+    line-height: 1.6;
+    font-size: var(--taille-texte-sm);
+}
+
+@media (max-width: 768px) {
+    .vinyle {
+        height: 250px;
+    }
+
+    .disque {
+        width: 60px;
+        height: 60px;
+        bottom: -20px;
+        right: 15px;
+    }
+
+    .disque::before {
+        width: 45px;
+        height: 45px;
+    }
+
+    .disque::after {
+        width: 15px;
+        height: 15px;
+    }
+}

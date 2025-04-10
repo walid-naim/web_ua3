@@ -1,0 +1,295 @@
+.retour {
+    margin-bottom: var(--espace-md);
+}
+
+.retour a {
+    display: inline-flex;
+    align-items: center;
+    color: var(--couleur-texte-secondaire);
+    transition: color var(--transition-rapide);
+    font-size: var(--taille-texte-base);
+}
+
+.retour a:hover {
+    color: var(--couleur-accent);
+}
+
+.flecheRetour {
+    margin-right: 8px;
+    font-size: 1.2em;
+}
+
+.contenu {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--espace-lg);
+}
+
+.imageHero {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: var(--rayon-bordure);
+    margin-bottom: var(--espace-md);
+    position: relative;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.imageHero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.badge {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: var(--couleur-accent);
+    padding: 10px 20px;
+    border-radius: var(--rayon-bordure);
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.date {
+    font-weight: 700;
+    font-size: var(--taille-texte-base);
+    margin-bottom: 4px;
+}
+
+.heure {
+    font-size: var(--taille-texte-sm);
+}
+
+.titre {
+    font-size: var(--taille-texte-2xl);
+    margin-bottom: var(--espace-md);
+    font-family: 'Playfair Display', Georgia, serif;
+    color: var(--couleur-texte-primaire);
+    position: relative;
+    display: inline-block;
+}
+
+.titre::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background-color: var(--couleur-accent);
+    bottom: -10px;
+    left: 0;
+}
+
+.listeArtistes {
+    margin-bottom: var(--espace-lg);
+}
+
+.listeArtistes h3,
+.description h3,
+.galerie h3 {
+    font-size: var(--taille-texte-xl);
+    margin-bottom: var(--espace-sm);
+    font-family: 'Playfair Display', Georgia, serif;
+    color: var(--couleur-accent);
+}
+
+.bullesArtistes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espace-sm);
+}
+
+.bulleArtiste {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 8px 16px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(199, 92, 40, 0.3);
+}
+
+.noteMusique {
+    color: var(--couleur-accent);
+    font-size: 14px;
+}
+
+.separateur {
+    width: 100px;
+    height: 2px;
+    background-color: rgba(199, 92, 40, 0.3);
+    margin-bottom: var(--espace-md);
+}
+
+.description p {
+    line-height: 1.8;
+    margin-bottom: var(--espace-lg);
+    color: var(--couleur-texte-secondaire);
+}
+
+.grilleGalerie {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: var(--espace-sm);
+}
+
+.itemGalerie {
+    border-radius: calc(var(--rayon-bordure) / 2);
+    overflow: hidden;
+    height: 120px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    transition: transform var(--transition-rapide);
+}
+
+.itemGalerie:hover {
+    transform: scale(1.05);
+}
+
+.itemGalerie img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-moyenne);
+}
+
+.sidebar {
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+}
+
+.carteTicket {
+    padding: var(--espace-sm);
+}
+
+.billet {
+    background-color: var(--couleur-fond-alt);
+    border-radius: var(--rayon-bordure);
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(199, 92, 40, 0.3);
+}
+
+.billetEntete {
+    background-color: var(--couleur-accent);
+    padding: var(--espace-sm);
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: var(--taille-texte-sm);
+    letter-spacing: 1px;
+}
+
+.billetContenu {
+    padding: var(--espace-md);
+}
+
+.billetContenu h3 {
+    text-align: center;
+    font-size: var(--taille-texte-lg);
+    margin-bottom: var(--espace-md);
+    color: var(--couleur-texte-primaire);
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.billetContenu h3::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    background-color: var(--couleur-accent);
+    bottom: -8px;
+    left: 25%;
+}
+
+.infoLigne {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--espace-sm) 0;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.infoLigne span:first-child {
+    font-weight: 700;
+    color: var(--couleur-texte-secondaire);
+}
+
+.boutonTicket {
+    display: block;
+    width: 100%;
+    margin-top: var(--espace-md);
+    background-color: var(--couleur-accent);
+    color: white;
+    padding: var(--espace-sm);
+    text-align: center;
+    border-radius: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    transition: transform var(--transition-rapide);
+}
+
+.boutonTicket:hover {
+    transform: translateY(-3px);
+}
+
+.boutonTicket::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), transparent);
+    opacity: 0;
+    transition: opacity var(--transition-rapide);
+}
+
+.boutonTicket:hover::after {
+    opacity: 1;
+}
+
+.billetPerforation {
+    height: 20px;
+    background-image: linear-gradient(90deg,
+    transparent 0%, transparent 40%,
+    var(--couleur-accent) 40%, var(--couleur-accent) 60%,
+    transparent 60%, transparent 100%);
+    background-size: 20px 2px;
+    background-repeat: repeat-x;
+    background-position: center;
+}
+
+@media (max-width: 768px) {
+    .contenu {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        position: static;
+        margin-top: var(--espace-md);
+    }
+
+    .imageHero {
+        height: 250px;
+    }
+
+    .titre {
+        font-size: var(--taille-texte-xl);
+    }
+
+    .badge {
+        bottom: 10px;
+        left: 10px;
+        padding: 8px 15px;
+    }
+}

@@ -1,0 +1,168 @@
+/* Updated styles for FormulaireContact.module.css */
+
+.formulaire {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: var(--espace-lg);
+    border-radius: var(--rayon-bordure);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(125, 93, 79, 0.2);
+    position: relative;
+}
+
+[data-theme='light'] .formulaire {
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(125, 93, 79, 0.2);
+}
+
+.formulaire::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background-color: var(--couleur-accent);
+    border-radius: var(--rayon-bordure) var(--rayon-bordure) 0 0;
+}
+
+.groupeChamp {
+    margin-bottom: var(--espace-md);
+}
+
+.groupeChamp label {
+    display: block;
+    margin-bottom: var(--espace-xs);
+    font-size: var(--taille-texte-sm);
+    color: var(--couleur-texte-secondaire);
+    font-weight: 700;
+}
+
+.champTexte {
+    width: 100%;
+    padding: var(--espace-sm);
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    color: var(--couleur-texte-primaire);
+    font-size: var(--taille-texte-base);
+    transition: border-color var(--transition-rapide);
+    font-family: inherit;
+}
+
+[data-theme='light'] .champTexte {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(125, 93, 79, 0.2);
+    color: var(--couleur-texte-primaire);
+}
+
+.champTexte:focus {
+    outline: none;
+    border-color: var(--couleur-accent);
+}
+
+textarea.champTexte {
+    border-radius: var(--rayon-bordure);
+    resize: vertical;
+    min-height: 120px;
+    padding: var(--espace-sm) var(--espace-md);
+}
+
+.erreur {
+    background-color: rgba(255, 68, 68, 0.1);
+    color: #ff6b6b;
+    padding: var(--espace-xs);
+    border-radius: var(--rayon-bordure);
+    margin-top: var(--espace-xs);
+    font-size: var(--taille-texte-sm);
+    text-align: left;
+    border: 1px solid rgba(255, 68, 68, 0.3);
+}
+
+[data-theme='light'] .erreur {
+    background-color: rgba(255, 68, 68, 0.1);
+    color: #d32f2f;
+}
+
+.boutonEnvoi {
+    width: 100%;
+    padding: var(--espace-sm);
+    background-color: var(--couleur-accent);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: var(--taille-texte-base);
+    cursor: pointer;
+    transition: all var(--transition-rapide);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+.boutonEnvoi::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), transparent);
+    opacity: 0;
+    transition: opacity var(--transition-rapide);
+}
+
+.boutonEnvoi:hover:not(:disabled)::after {
+    opacity: 1;
+}
+
+.boutonEnvoi:hover:not(:disabled) {
+    transform: translateY(-3px);
+}
+
+.boutonEnvoi:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.succes {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: var(--espace-lg);
+    border-radius: var(--rayon-bordure);
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(125, 93, 79, 0.2);
+    position: relative;
+}
+
+[data-theme='light'] .succes {
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.succes::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background-color: var(--couleur-accent);
+    border-radius: var(--rayon-bordure) var(--rayon-bordure) 0 0;
+}
+
+.succes h3 {
+    font-size: var(--taille-texte-xl);
+    margin-bottom: var(--espace-sm);
+    color: var(--couleur-texte-primaire);
+}
+
+.succes p {
+    color: var(--couleur-texte-secondaire);
+    margin-bottom: var(--espace-md);
+}
