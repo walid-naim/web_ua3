@@ -1,0 +1,200 @@
+:root {
+  /* Variables de couleurs - Thème Rock Acoustique */
+  --couleur-fond: #231f1e;
+  --couleur-fond-alt: #342b27;
+  --couleur-texte-primaire: #f3e9dc;
+  --couleur-texte-secondaire: #b8a99e;
+  --couleur-accent: #c75c28;
+  --couleur-accent-secondaire: #7d5d4f;
+  --couleur-overlay: rgba(35, 31, 30, 0.7);
+
+  /* Variables d'espacement */
+  --espace-xs: 0.5rem;
+  --espace-sm: 1rem;
+  --espace-md: 2rem;
+  --espace-lg: 4rem;
+  --espace-xl: 8rem;
+
+  /* Variables de mise en page */
+  --largeur-conteneur: 1200px;
+  --rayon-bordure: 20px;
+
+  /* Variables de typographie */
+  --taille-texte-xs: 0.75rem;
+  --taille-texte-sm: 0.875rem;
+  --taille-texte-base: 1rem;
+  --taille-texte-lg: 1.25rem;
+  --taille-texte-xl: 1.5rem;
+  --taille-texte-2xl: 2rem;
+  --taille-texte-3xl: 3rem;
+
+  /* Variables d'animation */
+  --transition-rapide: 0.2s ease;
+  --transition-moyenne: 0.3s ease;
+}
+
+/* Theme clair */
+[data-theme='light'] {
+  --couleur-fond: #f8f4ef;
+  --couleur-fond-alt: #ebe4dc;
+  --couleur-texte-primaire: #2a221f;
+  --couleur-texte-secondaire: #5d4e46;
+  --couleur-accent: #c75c28;
+  --couleur-accent-secondaire: #9a6b52;
+  --couleur-overlay: rgba(248, 244, 239, 0.8);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: var(--couleur-fond);
+  color: var(--couleur-texte-primaire);
+  font-family: 'Libre Baskerville', Georgia, serif;
+  line-height: 1.5;
+  background-image: url('/images/texture-bois.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.contenu-principal {
+  min-height: 100vh;
+  padding-top: 80px;
+}
+
+.conteneur {
+  width: 100%;
+  max-width: var(--largeur-conteneur);
+  margin: 0 auto;
+  padding: 0 var(--espace-md);
+}
+
+.section {
+  padding: var(--espace-lg) 0;
+}
+
+.bouton {
+  background-color: var(--couleur-accent);
+  color: var(--couleur-texte-primaire);
+  padding: var(--espace-sm) var(--espace-md);
+  border: none;
+  border-radius: 50px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: background-color var(--transition-rapide);
+  text-align: center;
+  display: inline-block;
+  font-size: var(--taille-texte-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.bouton::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), transparent);
+  opacity: 0;
+  transition: opacity var(--transition-rapide);
+}
+
+.bouton:hover::after {
+  opacity: 1;
+}
+
+.bouton:active {
+  transform: scale(0.98);
+}
+
+.themeToggle {
+  background-color: transparent;
+  color: var(--couleur-texte-secondaire);
+  border: 1px solid var(--couleur-texte-secondaire);
+  border-radius: 50px;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all var(--transition-rapide);
+}
+
+.themeToggle:hover {
+  color: var(--couleur-accent);
+  border-color: var(--couleur-accent);
+}
+
+.langToggle {
+  background-color: transparent;
+  color: var(--couleur-texte-secondaire);
+  border: 1px solid var(--couleur-texte-secondaire);
+  border-radius: 50px;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all var(--transition-rapide);
+  margin-left: 0.5rem;
+}
+
+.langToggle:hover {
+  color: var(--couleur-accent);
+  border-color: var(--couleur-accent);
+}
+
+.toggleContainer {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+/* Points de rupture responsive */
+@media (max-width: 768px) {
+  :root {
+    --espace-lg: 2.5rem;
+    --espace-xl: 5rem;
+  }
+
+  .contenu-principal {
+    padding-top: 60px;
+  }
+
+  .toggleContainer {
+    margin-bottom: 1rem;
+    justify-content: center;
+    width: 100%;
+  }
+}
